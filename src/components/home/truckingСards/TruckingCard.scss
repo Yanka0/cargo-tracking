@@ -1,0 +1,19 @@
+.card {
+  border: none;
+  border-left: 1px solid rgb(245, 237, 237) !important;
+
+  img {
+    border-radius: 30px;
+    align-self: center;
+    margin-top: 40px;
+  }
+  button{
+    background-color: white;
+    border: none;
+    border-bottom:1px solid rgb(192, 188, 187) ;
+  }
+}
+.card:first-child {
+  border: none !important;
+}
+

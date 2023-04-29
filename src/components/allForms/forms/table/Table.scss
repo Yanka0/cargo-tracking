@@ -1,0 +1,25 @@
+.table-wrapper {
+  width: 100%;
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse; 
+    overflow: hidden;
+   
+  }
+}
+
+thead {
+  background-color: rgb(47, 52, 50);
+  color: rgb(255, 255, 255);
+ 
+}
+ th,
+ td {
+  padding: 0.8rem;
+  text-align: center;
+}
+td {
+  border-top: 0.5px solid #ddd;
+}
