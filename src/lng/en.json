@@ -68,8 +68,14 @@
   "businessRuleFive":"When passing through each checkpoint, the driver enters the date and time of passing the checkpoint in the waybill.",
   "businessRuleSix":"As a result of the transport of goods, the goods may deteriorate, they may be stolen, etc. In this case, upon delivery of the goods at the destination, an act of write-off of goods is issued, which indicates the date, quantity and price of the written-off goods, the name of the responsible person.",
   "businessRuleSeven":"For the transportation of goods, the carrier receives a monetary reward, which depends on the type of vehicle that transported the goods and the distance.",
-  "actions":"actions",
-  "add":"add"
+  "actions":"Actions",
+  "add":"Add",
+  "role":"Role",
+  "clientId":"ID",
+  "user":"User",
+  "admin":"Admin",
+  "driver":"Driver"
+
 
   
 }

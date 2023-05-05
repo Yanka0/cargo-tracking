@@ -6,8 +6,9 @@ import "./Modal.scss";
 import Modal from "./Modal";
 import Input from "../../../UI/input/Input";
 import Button from "../../../UI/button/Button";
+import Select from "../../../UI/select/Select";
 
-function AddUserModal({ closeModal, onSubmit }) {
+function AddUserModal({ closeModal, onSubmit, rowToEdit, onChange }) {
   const { t } = useTranslation();
 
   const [maxDateTime, setMaxDateTime] = useState(
@@ -63,14 +64,8 @@ function AddUserModal({ closeModal, onSubmit }) {
       .matches(/[0-9]+/, t("isValidFlat")),
     email: yup.string().email(t("isValidEmail")).required(t("enterEmail")),
     login: yup.string().required(t("enterLogin")),
-    password: yup
-      .string()
-      .min(4, t("enterPassword"))
-      .max(15, t("passportSize"))
-      .required(t("enter password")),
-    confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
   });
-
+console.log(onChange)
   return (
     <Modal
       schema={schema}
@@ -80,14 +75,16 @@ function AddUserModal({ closeModal, onSubmit }) {
         <>
           <Input
             id="name"
+            value={rowToEdit.name}
             type="text"
             placeholder={t("name")}
             register={{ ...register("name") }}
             errorMessage={errors.name?.message}
-            
+            onChange={onChange}
           />
           <Input
             id="surname"
+            value={rowToEdit.surname}
             type="text"
             placeholder={t("surname")}
             register={{ ...register("surname") }}
@@ -96,6 +93,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="patronymic"
             type="text"
+            value={rowToEdit.patronymic}
             placeholder={t("patronymic")}
             register={{ ...register("patronymic") }}
             errorMessage={errors.patronymic?.message}
@@ -103,6 +101,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="bornDate"
             type="date"
+            value={rowToEdit.bornDate}
             placeholder={t("bornDate")}
             register={{ ...register("bornDate") }}
             errorMessage={errors.bornDate?.message}
@@ -111,6 +110,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="passportNum"
             type="text"
+            value={rowToEdit.passportNum}
             placeholder={t("passportNum")}
             register={{ ...register("passportNum") }}
             errorMessage={errors.passportNum?.message}
@@ -118,6 +118,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="issuedBy"
             type="text"
+            value={rowToEdit.issuedBy}
             placeholder={t("issuedBy")}
             register={{ ...register("issuedBy") }}
             errorMessage={errors.issuedBy?.message}
@@ -125,6 +126,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="town"
             type="text"
+            value={rowToEdit.town}
             placeholder={t("town")}
             register={{ ...register("town") }}
             errorMessage={errors.town?.message}
@@ -132,6 +134,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="street"
             type="text"
+            value={rowToEdit.street}
             placeholder={t("street")}
             register={{ ...register("street") }}
             errorMessage={errors.street?.message}
@@ -139,6 +142,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="house"
             type="text"
+            value={rowToEdit.house}
             placeholder={t("house")}
             register={{ ...register("house") }}
             errorMessage={errors.house?.message}
@@ -146,6 +150,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="flat"
             type="text"
+            value={rowToEdit.flat}
             placeholder={t("flat")}
             register={{ ...register("flat") }}
             errorMessage={errors.flat?.message}
@@ -153,6 +158,7 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="email"
             type="text"
+            value={rowToEdit.email}
             placeholder={t("email")}
             register={{ ...register("email") }}
             errorMessage={errors.email?.message}
@@ -160,34 +166,17 @@ function AddUserModal({ closeModal, onSubmit }) {
           <Input
             id="login"
             type="text"
+            value={rowToEdit.login}
             placeholder={t("login")}
             register={{ ...register("login") }}
             errorMessage={errors.login?.message}
           />
-          <Input
-            id="password"
-            type="password"
-            placeholder={t("password")}
-            register={{ ...register("password") }}
-            errorMessage={errors.password?.message}
-          />
-          <Input
-            id="confirmPassword"
-            type="password"
-            placeholder={t("confirmPassword")}
-            register={{ ...register("confirmPassword") }}
-            errorMessage={
-              errors.confirmPassword?.message && t("isValidPassword")
-            }
-          />
+          <Select register={{ ...register("role") }} name = "role" options={[t('user'), t('driver'), t('admin')]}/>
         </>
       )}
       buttonRenderer={() => (
         <>
-          <Button
-            className="tableBtn"
-            name={t("continue")}
-          />
+          <Button className="tableBtn" name={t("continue")} />
         </>
       )}
     />

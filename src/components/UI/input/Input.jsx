@@ -2,11 +2,11 @@ import React from "react";
 import './Input.scss'
 
 
-function Input({name, placeholder, type, register, errorMessage, max}) {
+function Input({name, placeholder, type, register, errorMessage, max,value,onChange}) {
   return (
     <div className='inputGroup'>
       <label htmlFor ={name}>
-      <input type={type} name={name} placeholder={placeholder} {...register} max={max} />
+      <input onChange ={onChange} type={type} value={value} name={name} placeholder={placeholder} {...register} max={max} />
       </label>
       <span className='errorMessage'>{errorMessage}</span>
     </div>
