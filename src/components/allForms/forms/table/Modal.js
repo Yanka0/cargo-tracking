@@ -1,12 +1,11 @@
 import React from "react";
-import Button from "../../../UI/button/Button";
 import "../Forms.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 import "./Modal.scss";
 
-function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer }) {
+function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer,defaultValues,title }) {
   const { t } = useTranslation();
 
   const {
@@ -15,6 +14,7 @@ function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer }) {
     handleSubmit,
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues:defaultValues
   });
 
   return (
@@ -26,7 +26,7 @@ function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer }) {
     >
       <div className="form_">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="text-center">{t("sign_up")}</h1>
+          <h1 className="text-center">{title}</h1>
           <div className="allInputs">{inputRenderer(register, errors)}</div>
           <div>{buttonRenderer()}</div>
         </form>

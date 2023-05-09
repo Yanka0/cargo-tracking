@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Select.scss'
 function Select({ register, options, name }) {
   return (
     <select {...register} >

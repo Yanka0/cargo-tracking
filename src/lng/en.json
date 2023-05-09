@@ -72,9 +72,13 @@
   "add":"Add",
   "role":"Role",
   "clientId":"ID",
-  "user":"User",
-  "admin":"Admin",
-  "driver":"Driver"
+  "user":"USER",
+  "admin":"ADMIN",
+  "driver":"DRIVER",
+  "addUser":"Add user",
+  "noInfo":"No information",
+  "status":"Status",
+  "addClient":"Add client"
 
 
   

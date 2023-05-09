@@ -8,9 +8,9 @@ import Input from "../../../UI/input/Input";
 import Button from "../../../UI/button/Button";
 import Select from "../../../UI/select/Select";
 
-function AddUserModal({ closeModal, onSubmit, rowToEdit, onChange }) {
+function UserInfoModal({ closeModal, onSubmit, rowToEdit }) {
   const { t } = useTranslation();
-
+  const title = t("addUser");
   const [maxDateTime, setMaxDateTime] = useState(
     new Date().toISOString().slice(0, 10)
   );
@@ -65,26 +65,26 @@ function AddUserModal({ closeModal, onSubmit, rowToEdit, onChange }) {
     email: yup.string().email(t("isValidEmail")).required(t("enterEmail")),
     login: yup.string().required(t("enterLogin")),
   });
-console.log(onChange)
+  
+  
   return (
     <Modal
       schema={schema}
+      title={title}
       closeModal={closeModal}
       onSubmit={onSubmit}
+      defaultValues={rowToEdit}
       inputRenderer={(register, errors) => (
         <>
           <Input
             id="name"
-            value={rowToEdit.name}
             type="text"
             placeholder={t("name")}
             register={{ ...register("name") }}
             errorMessage={errors.name?.message}
-            onChange={onChange}
           />
           <Input
             id="surname"
-            value={rowToEdit.surname}
             type="text"
             placeholder={t("surname")}
             register={{ ...register("surname") }}
@@ -93,7 +93,6 @@ console.log(onChange)
           <Input
             id="patronymic"
             type="text"
-            value={rowToEdit.patronymic}
             placeholder={t("patronymic")}
             register={{ ...register("patronymic") }}
             errorMessage={errors.patronymic?.message}
@@ -101,7 +100,6 @@ console.log(onChange)
           <Input
             id="bornDate"
             type="date"
-            value={rowToEdit.bornDate}
             placeholder={t("bornDate")}
             register={{ ...register("bornDate") }}
             errorMessage={errors.bornDate?.message}
@@ -110,7 +108,6 @@ console.log(onChange)
           <Input
             id="passportNum"
             type="text"
-            value={rowToEdit.passportNum}
             placeholder={t("passportNum")}
             register={{ ...register("passportNum") }}
             errorMessage={errors.passportNum?.message}
@@ -118,7 +115,6 @@ console.log(onChange)
           <Input
             id="issuedBy"
             type="text"
-            value={rowToEdit.issuedBy}
             placeholder={t("issuedBy")}
             register={{ ...register("issuedBy") }}
             errorMessage={errors.issuedBy?.message}
@@ -126,7 +122,6 @@ console.log(onChange)
           <Input
             id="town"
             type="text"
-            value={rowToEdit.town}
             placeholder={t("town")}
             register={{ ...register("town") }}
             errorMessage={errors.town?.message}
@@ -134,7 +129,6 @@ console.log(onChange)
           <Input
             id="street"
             type="text"
-            value={rowToEdit.street}
             placeholder={t("street")}
             register={{ ...register("street") }}
             errorMessage={errors.street?.message}
@@ -142,7 +136,6 @@ console.log(onChange)
           <Input
             id="house"
             type="text"
-            value={rowToEdit.house}
             placeholder={t("house")}
             register={{ ...register("house") }}
             errorMessage={errors.house?.message}
@@ -150,7 +143,6 @@ console.log(onChange)
           <Input
             id="flat"
             type="text"
-            value={rowToEdit.flat}
             placeholder={t("flat")}
             register={{ ...register("flat") }}
             errorMessage={errors.flat?.message}
@@ -158,7 +150,6 @@ console.log(onChange)
           <Input
             id="email"
             type="text"
-            value={rowToEdit.email}
             placeholder={t("email")}
             register={{ ...register("email") }}
             errorMessage={errors.email?.message}
@@ -166,12 +157,14 @@ console.log(onChange)
           <Input
             id="login"
             type="text"
-            value={rowToEdit.login}
             placeholder={t("login")}
             register={{ ...register("login") }}
             errorMessage={errors.login?.message}
           />
-          <Select register={{ ...register("role") }} name = "role" options={[t('user'), t('driver'), t('admin')]}/>
+          <Select
+            register={{ ...register("role") }}
+            options={['USER','DRIVER','ADMIN']}
+          />
         </>
       )}
       buttonRenderer={() => (
@@ -183,4 +176,4 @@ console.log(onChange)
   );
 }
 
-export default AddUserModal;
+export default UserInfoModal;

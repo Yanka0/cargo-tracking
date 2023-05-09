@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/home/Home';
 
 import UsersTable from './components/allForms/forms/table/UsersTable';
+import ClientsTable from './components/allForms/forms/table/ClientsTable';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <NavBar/>
         <Home/>
         <UsersTable/>
+        <ClientsTable/>
     </div>
   );
 }

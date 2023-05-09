@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-import AddUserModal from "./AddUserModal";
+import UserInfoModal from "./UserInfoModal";
 import Table from "./Table";
 import { useTranslation } from "react-i18next";
 import Button from "../../../UI/button/Button";
-import "./MainTable.scss";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
 function UsersTable() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [rowToEdit, setRowToEdit] = useState('');
-  const onSubmit = (data) => {
-    console.log(data);
-    setRows([...rows, data]);
-    closeModal();
-  };
-
-  const closeModal = () => {
-    setRowToEdit('')
-    setModalOpen(false);
-  };
+  const [rowToEdit, setRowToEdit] = useState(null);
+  const [rowToEditIndex, setRowToEditIndex] = useState(null);
 
   const [rows, setRows] = useState([
     {
@@ -34,7 +24,7 @@ function UsersTable() {
       flat: "4",
       email: "yana.savchenko1407@gmail.com",
       login: "Yanka0",
-      role: "USER",
+      role: "Пользователь",
       clientId: 1,
     },
     {
@@ -70,18 +60,40 @@ function UsersTable() {
       clientId: 3,
     },
   ]);
-  
+
   const handleDeleteRow = (targetIndex) => {
     setRows(rows.filter((item, index) => index !== targetIndex));
   };
   const handleEditRow = (targetIndex) => {
+    setRowToEditIndex(targetIndex);
     setRowToEdit(rows[targetIndex]);
     setModalOpen(true);
   };
-  const onChange = (e) => {
-    setRowToEdit({...rowToEdit,[e.target.name]: e.target.value})
-  }
-  console.log(rowToEdit);
+  const onSubmit = (data) => {
+    if(rowToEdit === null){
+     createUser(data); 
+    } else
+    updateUser(data);
+  };
+  const createUser = (data) => {
+    setRows([...rows, data]);
+    closeModal();
+  };
+  const updateUser = (data) => {
+    setRows(
+      rows.map((currRow, idx) => {
+        if (idx !== rowToEditIndex) return currRow;
+        return data;
+      })
+    );
+    closeModal();
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setRowToEdit(null);
+  };
+
   const { t } = useTranslation();
 
   return (
@@ -148,25 +160,29 @@ function UsersTable() {
             name: t("actions"),
             renderer: (user, index) => (
               <span>
-                <BsFillTrashFill onClick={() => handleDeleteRow(index)} />
-                <BsFillPencilFill onClick={() => handleEditRow(index)} />
+                <BsFillTrashFill className= 'deleteIcon' onClick={() => handleDeleteRow(index)} />
+                <BsFillPencilFill className= 'editIcon' onClick={() => handleEditRow(index)} />
               </span>
             ),
           },
         ]}
         rows={rows}
       />
+
+      {rows.length == 0 && <p className="text-center h4">{t("noInfo")}</p>}
       <Button
         onClick={() => setModalOpen(true)}
         name={t("add")}
         className="tableBtn"
       />
       {modalOpen && (
-        <AddUserModal
-          closeModal={closeModal}
+        <UserInfoModal
+          closeModal={() => {
+            setModalOpen(false);
+            setRowToEdit(null);
+          }}
           onSubmit={onSubmit}
           rowToEdit={rowToEdit}
-          onChange={onChange}
         />
       )}
     </div>
