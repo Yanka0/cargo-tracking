@@ -2,12 +2,9 @@ import React from "react";
 import "../Forms.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useTranslation } from "react-i18next";
 import "./Modal.scss";
 
 function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer,defaultValues,title }) {
-  const { t } = useTranslation();
-
   const {
     register,
     formState: { errors },
@@ -16,7 +13,6 @@ function Modal({ schema, closeModal, onSubmit, inputRenderer,buttonRenderer,defa
     resolver: yupResolver(schema),
     defaultValues:defaultValues
   });
-
   return (
     <div
       className="modal-container"

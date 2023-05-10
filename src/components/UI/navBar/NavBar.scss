@@ -1,29 +1,25 @@
 .navbar-toggler {
-    border: none!important;
-  
+  border: none !important;
 }
-.navbar-toggler-icon{
-    background-image:url(../../../assets/img/menu.svg)!important;
-    width: 2em !important;
-    height: 2em !important;
-  }
-
-
-.navbar{
-    --bs-navbar-toggler-focus-width: 0!important; 
+.navbar-toggler-icon {
+  background-image: url(../../../assets/img/menu.svg) !important;
+  width: 2em !important;
+  height: 2em !important;
 }
-.link{
-    color: rgb(0, 0, 0) !important;
-    padding-right: 50px !important;
-  }
-  
 
-  .logIn_btn {
-    background-color: rgb(88, 88, 88);
-    margin-left: 5px;
-  }
-  .forms_btns {
-    display: flex !important;
-    flex-direction: row !important;
-  }
-  
+.navbar {
+  --bs-navbar-toggler-focus-width: 0 !important;
+}
+.link {
+  color: rgb(0, 0, 0) !important;
+  padding-right: 50px !important;
+}
+
+.logIn_btn {
+  background-color: rgb(88, 88, 88);
+  margin-left: 5px;
+}
+.forms_btns {
+  display: flex !important;
+  flex-direction: row !important;
+}

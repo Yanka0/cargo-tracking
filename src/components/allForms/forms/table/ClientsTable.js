@@ -1,22 +1,20 @@
 import React, { useState } from 'react'
 import { useTranslation } from "react-i18next";
-import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
+import {BsFillTrashFill } from 'react-icons/bs';
 import Button from '../../../UI/button/Button';
-import ClientsInfoModal from './ClientsInfoModal';
+import AddClientModal from './AddClientModal';
 import Table from './Table';
 
 function ClientsTable() {
 const { t } = useTranslation();
 const [modalOpen, setModalOpen] = useState(false);
-  const [rowToEdit, setRowToEdit] = useState(null);
-  const [rowToEditIndex, setRowToEditIndex] = useState(null);
   const [rows, setRows] = useState([
     {
-      name: "Olya",
+      companyName: "Olya",
       status: "PRIVITE",
     },
     {
-      name: "Yana",
+      companyName: "Yana",
       status: "LEGAL",
     },
   ]);
@@ -24,53 +22,35 @@ const [modalOpen, setModalOpen] = useState(false);
   const handleDeleteRow = (targetIndex) => {
     setRows(rows.filter((item, index) => index !== targetIndex));
   };
-  const handleEditRow = (targetIndex) => {
-    setRowToEditIndex(targetIndex);
-    setRowToEdit(rows[targetIndex]);
-    setModalOpen(true);
-  };
+
   const onSubmit = (data) => {
-    if(rowToEdit === null){
-     createUser(data); 
-    } else
-    updateUser(data);
-  };
-  const createUser = (data) => {
-    setRows([...rows, data]);
-    closeModal();
-  };
-  const updateUser = (data) => {
-    setRows(
-      rows.map((currRow, idx) => {
-        if (idx !== rowToEditIndex) return currRow;
-        return data;
-      })
-    );
+    console.log(data);
+    const {companyName, status} = data;
+    rows.push({companyName, status});
     closeModal();
   };
 
   const closeModal = () => {
     setModalOpen(false);
-    setRowToEdit(null);
   };
+
   return (
     <div>
       <Table
         columns={[
           {
-            name: t("name"),
-            renderer: (user) => user.name,
+            name: t("companyName"),
+            renderer: (client) => client.companyName,
           },
           {
             name: t("status"),
-            renderer: (user) => user.status,
+            renderer: (client) => client.status,
           },
           {
             name: t("actions"),
-            renderer: (user, index) => (
+            renderer: (index) => (
               <span>
                 <BsFillTrashFill className= 'deleteIcon' onClick={() => handleDeleteRow(index)} />
-                <BsFillPencilFill className= 'editIcon' onClick={() => handleEditRow(index)} />
               </span>
             ),
           },
@@ -85,13 +65,11 @@ const [modalOpen, setModalOpen] = useState(false);
         className="tableBtn"
       />
       {modalOpen && (
-        <ClientsInfoModal
+        <AddClientModal
           closeModal={() => {
             setModalOpen(false);
-            setRowToEdit(null);
           }}
           onSubmit={onSubmit}
-          rowToEdit={rowToEdit}
         />
       )}
     </div>

@@ -1,24 +1,29 @@
-import React from 'react'
+import React from "react";
 import { useTranslation } from "react-i18next";
-import Button from '../button/Button';
+import Button from "../button/Button";
 
-import  './LngBtn.scss'
+import "./LngBtn.scss";
 
 function LngBtn() {
-    const {  i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
-	const handleChangeLng = (lng) => {
-		i18n.changeLanguage(lng);
-		localStorage.setItem("lng", lng);
-	};
+  const handleChangeLng = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lng", lng);
+  };
 
   return (
     <div className="btns">
-    
-    <button className="lngBtnLast lngBtn" onClick={() => handleChangeLng("en")}>EN</button>
-		<button className="lngBtn" onClick={() => handleChangeLng("ru")}>RU</button>
+      <button
+        className="lngBtnLast lngBtn"
+        onClick={() => handleChangeLng("en")}>
+        EN
+      </button>
+      <button className="lngBtn" onClick={() => handleChangeLng("ru")}>
+        RU
+      </button>
     </div>
-  )
+  );
 }
 
-export default LngBtn
+export default LngBtn;

@@ -9,10 +9,7 @@ import Button from "../button/Button";
 
 function NavBar() {
   const { t } = useTranslation();
- ;
   return ( 
- 
-    
     <Navbar expand="lg">
       <Container>
         <Navbar.Brand href="#">
@@ -21,7 +18,6 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
-
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
             <NavLink href="#home" className='link'>
@@ -44,8 +40,6 @@ function NavBar() {
           <Nav className="forms_btns">
             <Button name={t("sign_up")} className=" signUp_btn"/>
             <Button name= {t("logIn")} className="logIn_btn"/>
-              
-            
           </Nav>
         </Navbar.Collapse>
       </Container>

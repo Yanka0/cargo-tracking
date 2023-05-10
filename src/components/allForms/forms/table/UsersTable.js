@@ -182,7 +182,7 @@ function UsersTable() {
             setRowToEdit(null);
           }}
           onSubmit={onSubmit}
-          rowToEdit={rowToEdit}
+          defaultValues={rowToEdit}
         />
       )}
     </div>
