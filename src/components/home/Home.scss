@@ -1,19 +1,23 @@
 .home {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../../assets/img/truck.jpg);
+  url(../../assets/img/truck.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+
   .homeBtn {
     margin-bottom: 10px;
   }
+
   p {
     font-size: 20px;
   }
-  .homeTitle{
+
+  .homeTitle {
     font-size: 50px;
   }
 }
-.allTruckingCards{
+
+.allTruckingCards {
   margin-top: 20px;
 }
