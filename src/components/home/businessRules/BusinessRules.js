@@ -10,49 +10,49 @@ function BusinessRules() {
         <div className="pt-5">
             <Carousel fade>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleOne")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleTwo")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleThree")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleFour")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleFive")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleSix")}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={BusinessRulesImg}/>
+                    <img className="d-block w-100 businessRulesImg" src={BusinessRulesImg}/>
                     <Carousel.Caption>
                         <Title name={t("businessRules")}/>
                         <p>{t("businessRuleSeven")}</p>

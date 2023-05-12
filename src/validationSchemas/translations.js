@@ -34,6 +34,9 @@ export const Translations = () => {
         enterLogin: t("enterLogin"),
         enterCompanyName: t('enterCompanyName'),
         companyNameSize: t('companyNameSize'),
-        isValidCompanyName: t('isValidCompanyName')
+        isValidCompanyName: t('isValidCompanyName'),
+        enterPassword: t("enterPassword"),
+        passwordSize:t("passwordSize"),
+
     };
 };

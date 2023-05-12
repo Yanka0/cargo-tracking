@@ -1,13 +1,13 @@
 import React from "react";
-import {Container, Nav, Navbar, NavLink} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import LngBtn from "../lngBtn/LngBtn";
 import logo from "../../../assets/img/logo.svg";
 import {useTranslation} from "react-i18next";
 import './NavBar.scss'
 import Button from "../button/Button";
+import { Link } from "react-router-dom";
 
-
-function NavBar() {
+function NavBar({children}) {
     const {t} = useTranslation();
     return (
         <Navbar expand="lg">
@@ -20,30 +20,31 @@ function NavBar() {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <NavLink href="#home" className='link'>
+                        <Nav.Link href="#home" className='link'>
                             {t("home")}
-                        </NavLink>
-                        <NavLink href="#home" className='link'>
+                        </Nav.Link>
+                        <Nav.Link href="#home" className='link'>
                             {t("about")}
-                        </NavLink>
-                        <NavLink href="#home" className='link'>
+                        </Nav.Link>
+                        <Nav.Link href="#home" className='link'>
                             {t("contact")}
-                        </NavLink>
-                        <NavLink href="#home" className='link'>
+                        </Nav.Link>
+                        <Nav.Link href="#home" className='link'>
                             {t("service")}
-                        </NavLink>
-                        <NavLink href="#home" className='link'>
+                        </Nav.Link>
+                        <Nav.Link href="#home" className='link'>
                             {t("service")}
-                        </NavLink>
+                        </Nav.Link>
                         <LngBtn/>
-                    </Nav>{" "}
+                    </Nav>
                     <Nav className="forms_btns">
                         <Button name={t("sign_up")} className=" signUp_btn"/>
-                        <Button name={t("logIn")} className="logIn_btn"/>
+                        <Nav.Link as={Link} to="/login"> <Button name={t("logIn")} className="logIn_btn" /></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
     );
 }
 

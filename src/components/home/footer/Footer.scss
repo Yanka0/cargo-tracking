@@ -1,0 +1,24 @@
+.footer {
+  background-color: rgb(45, 45, 45);
+  margin-top: 30px;
+  p {
+    color: white;
+    font-size: 14px;
+  }
+  h6{
+    color: white;
+    margin-bottom: 0;
+  }
+  .footer_item{
+    display: flex;
+  }
+  .contacts{
+    margin: 10px;
+    border-bottom: 1px solid #888383;
+  }
+  img{
+    margin-right: 10px;
+
+  }
+
+}

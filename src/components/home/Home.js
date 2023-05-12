@@ -4,7 +4,8 @@ import Button from "../UI/button/Button";
 import "./Home.scss";
 import {useTranslation} from "react-i18next";
 import TruckingCard from "./truckingСards/TruckingCard";
-import BussinesRules from "./businessRules/BusinessRules";
+import BusinessRules from "./businessRules/BusinessRules";
+import Footer from "./footer/Footer";
 
 function Home() {
     const {t} = useTranslation();
@@ -27,7 +28,10 @@ function Home() {
             </section>
             <section className="allTruckingCards">
                 <TruckingCard/>
-                <BussinesRules/>
+                <BusinessRules/>
+            </section>
+            <section>
+                <Footer/>
             </section>
         </div>
     );

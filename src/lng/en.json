@@ -84,5 +84,11 @@
   "save": "Save",
   "enterCompanyName": "Enter company name",
   "companyNameSize": "Size of the company name should be maximum 20",
-  "isValidCompanyName": "This is not a valid company name"
+  "isValidCompanyName": "This is not a valid company name",
+  "contacts": "Contacts",
+  "phoneNumber": "+375445959282",
+  "companyEmail": "cargo_transportation@gmail.com",
+  "companyPlus": "Around the clock, no days off",
+  "footerDesc": "CargoTransportation.by - Loading and unloading operations."
+
 }

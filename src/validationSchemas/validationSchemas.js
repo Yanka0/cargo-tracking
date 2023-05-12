@@ -100,3 +100,21 @@ export const clientSchema = () => {
         status: yup.string().required(),
     });
 };
+export const logInSchema = () => {
+    const {
+        isValidEmail,
+        enterEmail,
+        enterPassword,
+        passwordSize
+    } = Translations();
+    return yup.object().shape({
+        email: yup
+            .string()
+            .email(isValidEmail).required(enterEmail),
+        password: yup
+            .string()
+            .min(4, enterPassword)
+            .max(15, passwordSize)
+            .required(enterPassword),
+    });
+}

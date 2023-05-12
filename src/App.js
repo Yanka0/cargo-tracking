@@ -1,16 +1,20 @@
 import NavBar from './components/UI/navBar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './components/home/Home';
-import Footer from './components/UI/footer/Footer';
+import { Route, Routes } from "react-router-dom";
+import LogIn from "./components/allForms/forms/table/LogIn";
+import Home from "./components/home/Home";
 
 function App() {
 
     return (
-        <div className="">
+        <>
             <NavBar/>
-            <Home/>
-            <Footer/>
-        </div>
+            <Routes>
+                <Route path="/" element={<Home />}> </Route>
+                <Route path="/login" element={<LogIn />}> </Route>
+            </Routes>
+
+        </>
     );
 }
 
