@@ -89,6 +89,26 @@
   "phoneNumber": "+375445959282",
   "companyEmail": "cargo_transportation@gmail.com",
   "companyPlus": "Around the clock, no days off",
-  "footerDesc": "CargoTransportation.by - Loading and unloading operations."
-
+  "footerDesc": "CargoTransportation.by - Loading and unloading operations.",
+  "users": "Users",
+  "clients": "Clients",
+  "logOut": "Log out",
+  "addStorage": "Add storage",
+  "storageName": "Storage name",
+  "storageAddress": "Storage address",
+  "enterStorageName": "Enter storage name",
+  "storageNameSize":"Size of the storage name should be maximum 20",
+  "isValidStorageName":"This is not a valid storage name",
+  "storageAddressSize":"Size of the storage address should be maximum 20",
+  "enterStorageAddress":"Enter storage address",
+  "isValidStorageAddress":"This is not a valid storage address",
+  "productOwnerAddress": "Product owner address",
+  "productOwnerName": "Product owner name",
+  "addProductOwner": "Add product owner",
+  "enterProductOwnerName": "Enter product owner name",
+  "productOwnerNameSize":"Size of the product owner name should be maximum 20",
+  "isValidProductOwnerName":"This is not a valid product owner name",
+  "productOwnerAddressSize":"Size of the product owner address should be maximum 20",
+  "enterProductOwnerAddress":"Enter product owner address",
+  "isValidProductOwnerAddress":"This is not a valid product owner address"
 }

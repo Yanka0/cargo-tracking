@@ -36,7 +36,19 @@ export const Translations = () => {
         companyNameSize: t('companyNameSize'),
         isValidCompanyName: t('isValidCompanyName'),
         enterPassword: t("enterPassword"),
-        passwordSize:t("passwordSize"),
+        passwordSize: t("passwordSize"),
+        enterStorageName:t("enterStorageName"),
+        storageNameSize:t("storageNameSize"),
+        isValidStorageName:t("isValidStorageName"),
+        storageAddressSize:t("storageAddressSize"),
+        enterStorageAddress:t("enterStorageAddress"),
+        isValidStorageAddress:t("isValidStorageAddress"),
+        enterProductOwnerName:t("enterProductOwnerName"),
+        productOwnerNameSize:t("productOwnerNameSize"),
+        isValidProductOwnerName:t("isValidProductOwnerName"),
+        productOwnerAddressSize:t("productOwnerAddressSize"),
+        enterProductOwnerAddress:t("enterProductOwnerAddress"),
+        isValidProductOwnerAddress:t("isValidProductOwnerAddress"),
 
     };
 };

@@ -2,7 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 import BusinessRulesImg from "../../../assets/img/businessRules.jpg";
 import {useTranslation} from "react-i18next";
 import "./BusinessRules.scss";
-import Title from "../../UI/title/Title";
+import Title from "../../typography/Title";
 
 function BusinessRules() {
     const {t} = useTranslation();

@@ -102,19 +102,67 @@ export const clientSchema = () => {
 };
 export const logInSchema = () => {
     const {
-        isValidEmail,
-        enterEmail,
+        enterLogin,
         enterPassword,
         passwordSize
     } = Translations();
+
     return yup.object().shape({
-        email: yup
+        login: yup
             .string()
-            .email(isValidEmail).required(enterEmail),
+            .required(enterLogin),
         password: yup
             .string()
             .min(4, enterPassword)
             .max(15, passwordSize)
             .required(enterPassword),
+    });
+}
+export const storageSchema = () => {
+    const {
+        enterStorageName,
+        storageNameSize,
+        isValidStorageName,
+        storageAddressSize,
+        enterStorageAddress,
+        isValidStorageAddress
+    } = Translations();
+
+    return yup.object().shape({
+        storageName:  yup
+            .string()
+            .min(2, enterStorageName)
+            .max(20, storageNameSize)
+            .required()
+            .matches(/[A-Za-zА-Яа-яЁё]+/, isValidStorageName),
+        storageAddress:  yup
+            .string()
+            .max(20, storageAddressSize)
+            .required(enterStorageAddress)
+            .matches(/[A-Za-zА-Яа-яЁё]+/, isValidStorageAddress),
+    });
+}
+export const productOwnerSchema = () => {
+    const {
+        enterProductOwnerName,
+        productOwnerNameSize,
+        isValidProductOwnerName,
+        productOwnerAddressSize,
+        enterProductOwnerAddress,
+        isValidProductOwnerAddress
+    } = Translations();
+
+    return yup.object().shape({
+        storageName:  yup
+            .string()
+            .min(2, enterProductOwnerName)
+            .max(20, productOwnerNameSize)
+            .required()
+            .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerName),
+        storageAddress:  yup
+            .string()
+            .max(20, productOwnerAddressSize)
+            .required(enterProductOwnerAddress)
+            .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerAddress),
     });
 }
