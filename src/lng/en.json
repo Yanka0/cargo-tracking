@@ -110,5 +110,10 @@
   "isValidProductOwnerName":"This is not a valid product owner name",
   "productOwnerAddressSize":"Size of the product owner address should be maximum 20",
   "enterProductOwnerAddress":"Enter product owner address",
-  "isValidProductOwnerAddress":"This is not a valid product owner address"
+  "isValidProductOwnerAddress":"This is not a valid product owner address",
+  "carNumber": "Car number",
+  "carFuelConsumption": "Car fuel consumption",
+  "carLoadCapacity": "Car load capacity",
+  "carType": "Car type",
+
 }
