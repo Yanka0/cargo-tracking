@@ -49,6 +49,12 @@ export const Translations = () => {
         productOwnerAddressSize:t("productOwnerAddressSize"),
         enterProductOwnerAddress:t("enterProductOwnerAddress"),
         isValidProductOwnerAddress:t("isValidProductOwnerAddress"),
+        enterCarNumber:t('enterCarNumber'),
+        isValidCarNumber:t('isValidCarNumber'),
+        enterCarFuelConsumption:t('enterCarFuelConsumption'),
+        isValidCarFuelConsumption:t('isValidCarFuelConsumption'),
+        enterCarLoadCapacity:t('enterCarLoadCapacity'),
+        isValidCarLoadCapacity:t('isValidCarLoadCapacity'),
 
     };
 };

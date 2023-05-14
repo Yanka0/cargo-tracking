@@ -115,5 +115,14 @@
   "carFuelConsumption": "Car fuel consumption",
   "carLoadCapacity": "Car load capacity",
   "carType": "Car type",
+  "addCar": "Add car",
+  "enterCarNumber": "Enter car number",
+  "isValidCarNumber": "This is not a valid car number",
+  "enterCarFuelConsumption": "Enter car fuel consumption",
+  "isValidCarFuelConsumption": "This is not a valid car fuel consumption",
+  "enterCarLoadCapacity": "Enter car load capacity",
+  "isValidCarLoadCapacity": "This is not a valid car load capacity"
+
+
 
 }

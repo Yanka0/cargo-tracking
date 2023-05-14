@@ -110,5 +110,16 @@
   "isValidProductOwnerName":"Неверно заполнено",
   "productOwnerAddressSize":"Размер адреса владельца продукта должен быть не более 20 символов",
   "enterProductOwnerAddress":"Введите адрес владельца продукта",
-  "isValidProductOwnerAddress":"Неверно заполнено"
+  "isValidProductOwnerAddress":"Неверно заполнено",
+  "enterCarNumber": "Введите номер машины",
+  "isValidCarNumber": "Неверно заполнено",
+  "enterCarFuelConsumption": "Введите расход количества дизтоплива машиной на 100 киломентров пути",
+  "isValidCarFuelConsumption": "Неверно заполнено",
+  "enterCarLoadCapacity": "Введите вместимость машины",
+  "isValidCarLoadCapacity": "Неверно заполнено",
+  "carNumber": "Номер машины",
+  "carFuelConsumption": "Расход дизтоплива",
+  "carLoadCapacity": "Вместимость машины",
+  "carType": "Тип машины",
+  "addCar": "Добавить машину"
 }

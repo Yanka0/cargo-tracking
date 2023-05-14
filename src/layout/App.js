@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import StoragesTable from "../pages/storages/StoragesTable";
 import ProductOwnersTable from "../pages/productOwners/ProductOwnersTable";
 import UsersTable from "../pages/users/UsersTable";
+import CarsTable from "../pages/cars/CarsTable";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Footer/>
             <StoragesTable/>
             <UsersTable/>
+            <CarsTable/>
         </div>
     );
 }

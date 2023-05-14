@@ -166,3 +166,29 @@ export const productOwnerSchema = () => {
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerAddress),
     });
 }
+export const carsSchema = () => {
+    const {
+        enterCarNumber,
+        isValidCarNumber,
+        enterCarFuelConsumption,
+        isValidCarFuelConsumption,
+        enterCarLoadCapacity,
+        isValidCarLoadCapacity
+    } = Translations();
+
+    return yup.object().shape({
+        carNumber: yup
+            .string()
+            .required(enterCarNumber)
+            .matches(/[0-9]+/, isValidCarNumber),
+        carFuelConsumption: yup
+            .string()
+            .required(enterCarFuelConsumption)
+            .matches(/[0-9]+/, isValidCarFuelConsumption),
+        carLoadCapacity: yup
+            .string()
+            .required(enterCarLoadCapacity)
+            .matches(/[0-9]+/, isValidCarLoadCapacity),
+    });
+}
+

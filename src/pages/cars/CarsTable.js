@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import Table from "../../components/tables/Table";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
 import Button from "../../components/forms/button/Button";
-import StoragesModal from "../storages/StoragesModal";
+import CarsModal from "./CarsModal";
 
 function CarsTable(props) {
     const {t} = useTranslation();
@@ -34,12 +34,20 @@ function CarsTable(props) {
             <Table
                 columns={[
                     {
-                        name: t("storageName"),
-                        renderer: (client) => client.storageName,
+                        name: t("carNumber"),
+                        renderer: (client) => client.carNumber,
                     },
                     {
-                        name: t("storageAddress"),
-                        renderer: (client) => client.storageAddress,
+                        name: t("carFuelConsumption"),
+                        renderer: (client) => client.carFuelConsumption,
+                    },
+                    {
+                        name: t("carLoadCapacity"),
+                        renderer: (client) => client.carLoadCapacity,
+                    },
+                    {
+                        name: t("carType"),
+                        renderer: (client) => client.carType,
                     },
                     {
                         name: t("actions"),
@@ -58,7 +66,7 @@ function CarsTable(props) {
                 className="tableBtn"
             />
             {modalOpen && (
-                <StoragesModal
+                <CarsModal
                     closeModal={() => {
                         setModalOpen(false);
                     }}
