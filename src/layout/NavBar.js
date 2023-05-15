@@ -41,6 +41,24 @@ function NavBar() {
                                     <Nav.Link href="/clients" className='link'>
                                         {t("clients")}
                                     </Nav.Link>
+                                    <Nav.Link href="/storages" className='link'>
+                                        {t("storages")}
+                                    </Nav.Link>
+                                    <Nav.Link href="/productOwners" className='link'>
+                                        {t("productOwners")}
+                                    </Nav.Link>
+                                    <Nav.Link href="/cars" className='link'>
+                                        {t("cars")}
+                                    </Nav.Link>
+                                    <Nav.Link href="/invoices" className='link'>
+                                        {t("invoices")}
+                                    </Nav.Link>
+                                    <Nav.Link href="/products" className='link'>
+                                        {t("products")}
+                                    </Nav.Link>
+                                    <Nav.Link href="/productsWriteOffs" className='link'>
+                                        {t("productsWriteOffs")}
+                                    </Nav.Link>
                                 </>
                             )
                         }

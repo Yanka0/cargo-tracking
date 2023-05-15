@@ -153,13 +153,13 @@ export const productOwnerSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        storageName:  yup
+        productOwnerName:  yup
             .string()
             .min(2, enterProductOwnerName)
             .max(20, productOwnerNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerName),
-        storageAddress:  yup
+        productOwnerAddress:  yup
             .string()
             .max(20, productOwnerAddressSize)
             .required(enterProductOwnerAddress)
@@ -189,6 +189,62 @@ export const carsSchema = () => {
             .string()
             .required(enterCarLoadCapacity)
             .matches(/[0-9]+/, isValidCarLoadCapacity),
+    });
+}
+export const invoicesSchema = () => {
+    const {
+        enterInvoiceNumber,
+        isValidInvoiceNumber,
+        enterInvoiceCreationDate,
+        enterInvoiceVerifiedDate,
+
+    } = Translations();
+
+    return yup.object().shape({
+        invoiceNumber: yup
+            .string()
+            .required(enterInvoiceNumber)
+            .matches(/[0-9]+/, isValidInvoiceNumber),
+        invoiceCreationDate: yup.string().required(enterInvoiceCreationDate),
+        invoiceVerifiedDate: yup.string().required(enterInvoiceVerifiedDate),
+    });
+}
+export const productsSchema = () => {
+    const {
+        enterProductName,
+        productNameSize,
+        isValidProductName,
+        enterProductAmount,
+        isValidProductAmount
+
+    } = Translations();
+
+    return yup.object().shape({
+        productName:  yup
+            .string()
+            .min(2, enterProductName)
+            .max(20, productNameSize)
+            .required()
+            .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductName),
+        productAmount: yup
+            .string()
+            .required(enterProductAmount)
+            .matches(/[0-9]+/, isValidProductAmount),
+
+    });
+}
+export const productWriteOffsSchema = () => {
+    const {
+        enterProductWriteOffAmount,
+        isValidProductWriteOffAmount,
+    } = Translations();
+
+    return yup.object().shape({
+        productWriteOffsAmount: yup
+            .string()
+            .required(enterProductWriteOffAmount)
+            .matches(/[0-9]+/, isValidProductWriteOffAmount),
+
     });
 }
 

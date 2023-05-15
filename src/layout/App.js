@@ -6,6 +6,9 @@ import StoragesTable from "../pages/storages/StoragesTable";
 import ProductOwnersTable from "../pages/productOwners/ProductOwnersTable";
 import UsersTable from "../pages/users/UsersTable";
 import CarsTable from "../pages/cars/CarsTable";
+import InvoicesTable from "../pages/invoices/InvoicesTable";
+import ProductsTable from "../pages/products/ProductsTable";
+import ProductsWriteOffsTable from "../pages/productsWriteOffs/ProductsWriteOffsTable";
 
 function App() {
     return (
@@ -15,9 +18,6 @@ function App() {
                 <Outlet/>
             </div>
             <Footer/>
-            <StoragesTable/>
-            <UsersTable/>
-            <CarsTable/>
         </div>
     );
 }

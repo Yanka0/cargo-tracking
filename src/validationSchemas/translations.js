@@ -55,6 +55,17 @@ export const Translations = () => {
         isValidCarFuelConsumption:t('isValidCarFuelConsumption'),
         enterCarLoadCapacity:t('enterCarLoadCapacity'),
         isValidCarLoadCapacity:t('isValidCarLoadCapacity'),
+        enterInvoiceNumber:t('enterInvoiceNumber'),
+        isValidInvoiceNumber:t('isValidInvoiceNumber'),
+        enterInvoiceCreationDate:t('enterInvoiceCreationDate'),
+        enterInvoiceVerifiedDate:t('enterInvoiceVerifiedDate'),
+        enterProductName:t('enterProductName'),
+        productNameSize:t('productNameSize'),
+        isValidProductName:t('isValidProductName'),
+        enterProductAmount:t('enterProductAmount'),
+        isValidProductAmount:t('isValidProductAmount'),
+        enterProductWriteOffAmount:t('enterProductWriteOffAmount'),
+        isValidProductWriteOffAmount:t('isValidProductWriteOffAmount'),
 
     };
 };
