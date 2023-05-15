@@ -14,7 +14,9 @@
 
 .link {
   color: rgb(0, 0, 0) !important;
-  padding-right: 50px !important;
+  padding-right: 20px !important;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .logIn_btn {
@@ -24,4 +26,8 @@
 .forms_btns {
   display: flex !important;
   flex-direction: row !important;
+}
+.navbar-nav {
+  overflow-x: auto;
+  white-space: nowrap;
 }
