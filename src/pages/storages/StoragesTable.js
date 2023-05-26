@@ -4,7 +4,7 @@ import Table from "../../components/tables/Table";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
 import Button from "../../components/forms/button/Button";
 import StoragesModal from "./StoragesModal";
-import { useEffect} from "react";
+import {useEffect} from "react";
 import axios from 'axios';
 
 
@@ -38,7 +38,7 @@ function StoragesTable(props) {
             const response = await axios.delete(`/api/storages/${storageId}`);
             if (response.status === 200) {
                 fetchStorages();
-                window.location.reload(); // Перезагрузка страницы
+                window.location.reload();
             } else {
                 setError('Error deleting storage: ' + response.statusText);
             }
@@ -52,7 +52,7 @@ function StoragesTable(props) {
             const response = await axios.put(`/api/storages/${storageId}`, updatedStorage);
             if (response.status === 200) {
                 fetchStorages();
-                window.location.reload(); // Перезагрузка страницы
+                window.location.reload();
             } else {
                 setError('Error updating storage: ' + response.statusText);
             }
@@ -67,7 +67,7 @@ function StoragesTable(props) {
             if (response.status === 200) {
                 setModalOpen(false);
                 fetchStorages();
-                window.location.reload(); // Перезагрузка страницы
+                window.location.reload();
             } else {
                 setError('Error creating storage: ' + response.statusText);
             }
@@ -97,19 +97,19 @@ function StoragesTable(props) {
                         renderer: (storage) => (
                             <span>
                         <BsFillTrashFill
-                          className="deleteIcon"
-                          onClick={() => deleteStorage(storage.id)}
-                           />
+                            className="deleteIcon"
+                            onClick={() => deleteStorage(storage.id)}
+                        />
                         <BsFillPencilFill
-                          className="editIcon"
-                          onClick={() => editStorage(storage.id, { name: 'New Name' })}
-                           />
+                            className="editIcon"
+                            onClick={() => editStorage(storage.id, {name: 'New Name'})}
+                        />
                          </span>),
                     },]}
                 rows={rows}
             />
 
-            {rows.length == 0 && <p className="text-center h4">{t("noInfo")}</p>}
+            {rows.length === 0 && <p className="text-center h4">{t("noInfo")}</p>}
             <Button
                 onClick={() => setModalOpen(true)}
                 name={t("add")}
@@ -123,7 +123,7 @@ function StoragesTable(props) {
             )}
         </div>
     )
-    ;
+        ;
 }
 
 export default StoragesTable;

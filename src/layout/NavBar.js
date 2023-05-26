@@ -76,7 +76,7 @@ function NavBar() {
                         }
                         <LngBtn/>
 
-                    <Nav className="forms_btns">
+                    <Nav className="">
                         <Nav.Link as={Link} to="/login" className="form_btn" >
                             <Button name={t("logIn")} className="logIn_btn" />
                         </Nav.Link>
@@ -89,7 +89,7 @@ function NavBar() {
                             }/>
                         </Nav.Link>
                     </Nav>
-                </Navbar.Collapse>
+            </Navbar.Collapse>
             </Container>
         </Navbar>
 

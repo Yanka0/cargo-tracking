@@ -1,28 +1,76 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import Table from "../../components/tables/Table";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
 import Button from "../../components/forms/button/Button";
 import CarsModal from "./CarsModal";
+import axios from "axios";
 
 function CarsTable(props) {
     const {t} = useTranslation();
     const [modalOpen, setModalOpen] = useState(false);
-    const [rows, setRows] = useState([
-        {
-            carNumber: "Olya",
-            carFuelConsumption: "PRIVITE",
-            carLoadCapacity:'2',
-            carType:'h'
-        },
+    const [rows, setRows] = useState([]);
+    const [error, setError] = useState('');
 
-    ]);
+    useEffect(() => {
+        fetchCars();
+    }, []);
 
 
+    const fetchCars = async () => {
+        try {
+            const response = await axios.get('/api/cars');
+            if (response.status === 200) {
+                setRows(response.data);
+            } else {
+                setError('Error fetching cars: ' + response.statusText);
+            }
+        } catch (error) {
+            setError('Error fetching cars: ' + error.message);
+        }
+    };
 
-    const onSubmit = (data) => {
-        console.log(data);
-        closeModal();
+    const deleteCar = async (carId) => {
+        try {
+            const response = await axios.delete(`/api/cars/${carId}`);
+            if (response.status === 200) {
+                fetchCars();
+                window.location.reload();
+            } else {
+                setError('Error deleting car: ' + response.statusText);
+            }
+        } catch (error) {
+            setError('Error deleting car: ' + error.message);
+        }
+    };
+
+    const editCar = async (carId, updatedCar) => {
+        try {
+            const response = await axios.put(`/api/storages/${carId}`, updatedCar);
+            if (response.status === 200) {
+                fetchCars();
+                window.location.reload();
+            } else {
+                setError('Error updating car: ' + response.statusText);
+            }
+        } catch (error) {
+            setError('Error updating car: ' + error.message);
+        }
+    };
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await axios.post('/api/car', data);
+            if (response.status === 200) {
+                setModalOpen(false);
+                fetchCars();
+                window.location.reload();
+            } else {
+                setError('Error creating car: ' + response.statusText);
+            }
+        } catch (error) {
+            setError('Error creating car: ' + error.message);
+        }
     };
 
     const closeModal = () => {
@@ -51,15 +99,21 @@ function CarsTable(props) {
                     },
                     {
                         name: t("actions"),
-                        renderer: (index) => (<span>
-                <BsFillTrashFill className='deleteIcon'/>
-                                <BsFillPencilFill className='editIcon'/>
-              </span>),
+                        renderer: (car) => (<span>
+                        <BsFillTrashFill
+                            className="deleteIcon"
+                            onClick={() => deleteCar(car.id)}
+                        />
+                        <BsFillPencilFill
+                            className="editIcon"
+                            onClick={() => editCar(car.id, {name: 'New Name'})}
+                        />
+                         </span>),
                     },]}
                 rows={rows}
             />
 
-            {rows.length == 0 && <p className="text-center h4">{t("noInfo")}</p>}
+            {rows.length === 0 && <p className="text-center h4">{t("noInfo")}</p>}
             <Button
                 onClick={() => setModalOpen(true)}
                 name={t("add")}
@@ -67,15 +121,13 @@ function CarsTable(props) {
             />
             {modalOpen && (
                 <CarsModal
-                    closeModal={() => {
-                        setModalOpen(false);
-                    }}
+                    closeModal={closeModal}
                     onSubmit={onSubmit}
                 />
             )}
         </div>
     )
-        ;
+
 }
 
 export default CarsTable;

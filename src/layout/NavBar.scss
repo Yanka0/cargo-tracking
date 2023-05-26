@@ -14,27 +14,14 @@
   }
 
   .navbar-nav {
-    overflow-x: auto;
-    white-space: nowrap;
-
     .nav-link {
       color: rgb(0, 0, 0);
       padding-right: 10px !important;
-      flex: 0 0 auto;
-      white-space: nowrap;
     }
 
     .nav-link:hover {
       color: rgb(241, 6, 6);
     }
-
-    .forms_btns {
-      display: flex !important;
-      flex-direction: row !important;
-
-
-    }
-
   }
   .dropdown{
     padding-right: 40px;
@@ -49,6 +36,7 @@
   }
   .form_btn {
     padding: 0 !important;
+    display: inline-block !important;
   }
 
   .logIn_btn {
@@ -56,4 +44,3 @@
     margin-right: 5px !important;
   }
 }
-
