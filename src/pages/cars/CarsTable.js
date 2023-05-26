@@ -35,19 +35,19 @@ function CarsTable(props) {
                 columns={[
                     {
                         name: t("carNumber"),
-                        renderer: (client) => client.carNumber,
+                        renderer: (car) => car.number,
                     },
                     {
                         name: t("carFuelConsumption"),
-                        renderer: (client) => client.carFuelConsumption,
+                        renderer: (car) => car.fuelConsumption,
                     },
                     {
                         name: t("carLoadCapacity"),
-                        renderer: (client) => client.carLoadCapacity,
+                        renderer: (car) => car.loadCapacity,
                     },
                     {
                         name: t("carType"),
-                        renderer: (client) => client.carType,
+                        renderer: (car) => car.carType,
                     },
                     {
                         name: t("actions"),

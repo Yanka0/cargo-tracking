@@ -12,7 +12,7 @@ function LngBtn() {
     };
 
     return (
-        <div className="btns">
+        <div className="lngBtns">
             <button
                 className="lngBtnLast lngBtn"
                 onClick={() => handleChangeLng("en")}>

@@ -19,6 +19,8 @@ function ClientsTable() {
         },
     ]);
 
+
+
     const handleDeleteRow = (targetIndex) => {
         setRows(rows.filter((item, index) => index !== targetIndex));
     };

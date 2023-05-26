@@ -9,8 +9,6 @@ function ProductsModal({closeModal, onSubmit}) {
     const {t} = useTranslation();
     const title = t("addProduct");
     const schema = productsSchema();
-
-
     return (
         <ModalForm
             schema={schema}
@@ -23,18 +21,18 @@ function ProductsModal({closeModal, onSubmit}) {
                         id="productName"
                         type="text"
                         placeholder={t("productName")}
-                        register={{...register("productName")}}
-                        errorMessage={errors.productName?.message}/>
+                        register={{...register("name")}}
+                        errorMessage={errors.name?.message}/>
                     <Input
                         id="productAmount"
                         type="text"
                         placeholder={t("productAmount")}
-                        register={{...register("productAmount")}}
-                        errorMessage={errors.productAmount?.message}
+                        register={{...register("amount")}}
+                        errorMessage={errors.amount?.message}
 
                     />
                     <Select
-                        register={{...register("productStatus")}}
+                        register={{...register("status")}}
                         options={[t('accepted'), t('verificationСompleted'), t('lost'),t('delivered')]}
                     />
 

@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import UserInfoModal from "./UserInfoModal";
 import Table from "../../components/tables/Table";
 import {useTranslation} from "react-i18next";
 import Button from "../../components/forms/button/Button";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
+import axios from "axios";
 
 function UsersTable() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -93,6 +94,19 @@ function UsersTable() {
         setModalOpen(false);
         setRowToEdit(null);
     };
+
+    // const [isLoading, setLoading] = useState(true);
+    //   const [users, setUsers] = useState();
+    //
+      useEffect(() => {
+        axios.get("http://localhost:8080/api/users?pageSize=10&pageNumber=0").then(response => {
+          setRows(response.data)
+        });
+      }, []);
+    //
+    //   if (isLoading) {
+    //     return <div className="App">Loading...</div>;
+    //   }
 
     const {t} = useTranslation();
 

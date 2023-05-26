@@ -5,6 +5,7 @@
   p {
     color: white;
     font-size: 14px;
+
   }
 
   h6 {
@@ -14,11 +15,17 @@
 
   .footer_item {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .contacts {
     margin: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #888383;
+    p{
+      margin: 0;
+    }
   }
 
   img {

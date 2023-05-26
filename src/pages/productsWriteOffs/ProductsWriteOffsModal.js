@@ -22,10 +22,10 @@ function ProductsWriteOffsModal({closeModal,onSubmit}) {
                         id="productWriteOffsAmount"
                         type="text"
                         placeholder={t("productWriteOffsAmount")}
-                        register={{...register("productWriteOffsAmount")}}
-                        errorMessage={errors.productWriteOffsAmount?.message}/>
+                        register={{...register("amount")}}
+                        errorMessage={errors.amount?.message}/>
                     <Select
-                        register={{...register("productWriteOffsStatus")}}
+                        register={{...register("status")}}
                         options={[t('stolen'), t('lost'),t('spoiled')]}
                     />
 

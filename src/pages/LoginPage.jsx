@@ -17,8 +17,8 @@ function LoginPage() {
         axios.post("http://localhost:8080/api/auth", data)
             .then(response => {
                 //get token from response
-                const token = response.data;
-                console.log(token);
+                const token = response.data.split(/\s/)[0];
+
 
                 //set JWT token to local
                 localStorage.setItem("token", token);

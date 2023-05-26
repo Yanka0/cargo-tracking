@@ -25,26 +25,26 @@ function InvoicesModal({closeModal, onSubmit}) {
                         id="invoiceNumber"
                         type="text"
                         placeholder={t("invoiceNumber")}
-                        register={{...register("invoiceNumber")}}
-                        errorMessage={errors.invoiceNumber?.message}/>
+                        register={{...register("number")}}
+                        errorMessage={errors.number?.message}/>
                     <Input
                         id="invoiceCreationDate"
                         type="date"
                         placeholder={t("invoiceCreationDate")}
-                        register={{...register("invoiceCreationDate")}}
-                        errorMessage={errors.invoiceCreationDate?.message}
+                        register={{...register("creationDate")}}
+                        errorMessage={errors.creationDate?.message}
                         max={maxDateTime}
                     />
                     <Input
                         id="invoiceVerifiedDate"
                         type="date"
                         placeholder={t("invoiceVerifiedDate")}
-                        register={{...register("invoiceVerifiedDate")}}
-                        errorMessage={errors.invoiceVerifiedDate?.message}
+                        register={{...register("verifiedDate")}}
+                        errorMessage={errors.verifiedDate?.message}
                         max={maxDateTime}
                     />
                     <Select
-                        register={{...register("invoiceType")}}
+                        register={{...register("status")}}
                         options={[t('framed'), t('verificationСompleted'), t('lost')]}
                     />
 

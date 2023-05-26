@@ -32,19 +32,19 @@ function InvoicesTable(props) {
                 columns={[
                     {
                         name: t("invoiceNumber"),
-                        renderer: (client) => client.invoiceNumber,
+                        renderer: (invoice) => invoice.number,
                     },
                     {
                         name: t("invoiceCreationDate"),
-                        renderer: (client) => client.invoiceCreationDate,
+                        renderer: (invoice) => invoice.creationDate,
                     },
                     {
                         name: t("invoiceVerifiedDate"),
-                        renderer: (client) => client.invoiceVerifiedDate,
+                        renderer: (invoice) => invoice.verifiedDate,
                     },
                     {
                         name: t("invoiceStatus"),
-                        renderer: (client) => client.invoiceStatus,
+                        renderer: (invoice) => invoice.status,
                     },
                     {
                         name: t("actions"),

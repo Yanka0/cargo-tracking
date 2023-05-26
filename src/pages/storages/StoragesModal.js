@@ -21,14 +21,14 @@ function StoragesModal({closeModal, onSubmit}) {
                         id="storageName"
                         type="text"
                         placeholder={t("storageName")}
-                        register={{...register("storageName")}}
-                        errorMessage={errors.storageName?.message}/>
+                        register={{...register("name")}}
+                        errorMessage={errors.name?.message}/>
                     <Input
                         id="storageAddress"
                         type="text"
                         placeholder={t("storageAddress")}
-                        register={{...register("storageAddress")}}
-                        errorMessage={errors.storageAddress?.message}/>
+                        register={{...register("address")}}
+                        errorMessage={errors.address?.message}/>
 
                 </>
             )}

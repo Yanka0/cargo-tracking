@@ -30,11 +30,11 @@ function ProductsWriteOffsTable(props) {
                 columns={[
                     {
                         name: t("productWriteOffsAmount"),
-                        renderer: (client) => client.productWriteOffsAmount,
+                        renderer: (product) => product.amount,
                     },
                     {
                         name: t("productWriteOffsStatus"),
-                        renderer: (client) => client.productWriteOffsStatus,
+                        renderer: (product) => product.status,
                     },
                     {
                         name: t("actions"),

@@ -8,12 +8,14 @@
     border-collapse: collapse;
     overflow: hidden;
     table-layout: auto;
+    margin-top: 10px;
+
   }
 }
 
 thead {
-  background-color: rgb(147, 180, 118);
-  color: rgb(255, 255, 255);
+  background-color: rgba(253, 87, 26, 0.87);
+  color: rgb(255, 255, 255)
 }
 
 th,
@@ -22,6 +24,7 @@ td {
   text-align: center;
   border-top: 0.5px solid #ddd;
   white-space: nowrap;
+  width: auto;
 }
 
 .deleteIcon {

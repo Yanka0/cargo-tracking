@@ -31,11 +31,11 @@ function ProductOwnersTable(props) {
                 columns={[
                     {
                         name: t("productOwnerName"),
-                        renderer: (client) => client.productOwnerName,
+                        renderer: (productOwner) => productOwner.name,
                     },
                     {
                         name: t("productOwnerAddress"),
-                        renderer: (client) => client.productOwnerAddress,
+                        renderer: (productOwner) => productOwner.address,
                     },
                     {
                         name: t("actions"),

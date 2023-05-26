@@ -1,16 +1,21 @@
-import React from "react";
-import {Container, Nav, Navbar} from "react-bootstrap";
+import React, {useState} from "react";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import LngBtn from "./LngBtn";
 import logo from "../assets/img/logo.svg";
 import {useTranslation} from "react-i18next";
 import './NavBar.scss'
 import Button from "../components/forms/button/Button";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const jwtExist = localStorage.getItem("token") !== null;
 
 function NavBar() {
     const {t} = useTranslation();
+    const [selectedItem, setSelectedItem] = useState(t("tables"));
+
+    const handleDropdownSelect = (eventKey) => {
+        setSelectedItem(eventKey);
+    };
 
     return (
         <Navbar expand="lg">
@@ -22,7 +27,7 @@ function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto">
+                    <Nav className=" justify-content-center flex-fill">
                         <Nav.Link href="/" className='link'>
                             {t("home")}
                         </Nav.Link>
@@ -32,44 +37,51 @@ function NavBar() {
                         <Nav.Link href="/#footer" className='link'>
                             {t("contact")}
                         </Nav.Link>
+                    </Nav>
                         {jwtExist &&
                             (
-                                <>
-                                    <Nav.Link href="/users" className='link'>
+                                <NavDropdown
+                                    title={selectedItem}
+                                    id="basic-nav-dropdown"
+                                    className='link'
+                                    onSelect={handleDropdownSelect}
+                                >
+                                    <NavDropdown.Item as={NavLink} to="/users" eventKey={t("users")}>
                                         {t("users")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/clients" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/clients" eventKey={t("clients")}>
                                         {t("clients")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/storages" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/storages" eventKey={t("storages")}>
                                         {t("storages")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/productOwners" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/productOwners" eventKey={t("productOwners")}>
                                         {t("productOwners")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/cars" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/cars" eventKey={t("cars")}>
                                         {t("cars")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/invoices" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/invoices" eventKey={t("invoices")}>
                                         {t("invoices")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/products" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/products" eventKey={t("products")}>
                                         {t("products")}
-                                    </Nav.Link>
-                                    <Nav.Link href="/productsWriteOffs" className='link'>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/productsWriteOffs" eventKey={t("productsWriteOffs")}>
                                         {t("productsWriteOffs")}
-                                    </Nav.Link>
-                                </>
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+
                             )
                         }
                         <LngBtn/>
-                    </Nav>
+
                     <Nav className="forms_btns">
-                        <Nav.Link as={Link} to="/login">
-                            <Button name={t("logIn")} className="logIn_btn"/>
+                        <Nav.Link as={Link} to="/login" className="form_btn" >
+                            <Button name={t("logIn")} className="logIn_btn" />
                         </Nav.Link>
-                        <Nav.Link>
-                            <Button name={t("logOut")} className="success" onClick={
+                        <Nav.Link className="form_btn">
+                            <Button name={t("logOut")} className="success " onClick={
                                 () => {
                                     localStorage.clear()
                                     window.location.href = '/'

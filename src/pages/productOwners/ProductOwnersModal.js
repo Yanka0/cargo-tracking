@@ -21,14 +21,14 @@ function ProductOwnersModal({closeModal, onSubmit}) {
                         id="productOwnerName"
                         type="text"
                         placeholder={t("productOwnerName")}
-                        register={{...register("productOwnerName")}}
-                        errorMessage={errors.productOwnerName?.message}/>
+                        register={{...register("name")}}
+                        errorMessage={errors.name?.message}/>
                     <Input
                         id="productOwnerAddress"
                         type="text"
                         placeholder={t("productOwnerAddress")}
-                        register={{...register("productOwnerAddress")}}
-                        errorMessage={errors.productOwnerAddress?.message}/>
+                        register={{...register("address")}}
+                        errorMessage={errors.address?.message}/>
 
                 </>
             )}

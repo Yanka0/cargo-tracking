@@ -129,13 +129,13 @@ export const storageSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        storageName:  yup
+        name:  yup
             .string()
             .min(2, enterStorageName)
             .max(20, storageNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidStorageName),
-        storageAddress:  yup
+        address:  yup
             .string()
             .max(20, storageAddressSize)
             .required(enterStorageAddress)
@@ -153,13 +153,13 @@ export const productOwnerSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        productOwnerName:  yup
+        name:  yup
             .string()
             .min(2, enterProductOwnerName)
             .max(20, productOwnerNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerName),
-        productOwnerAddress:  yup
+        address:  yup
             .string()
             .max(20, productOwnerAddressSize)
             .required(enterProductOwnerAddress)
@@ -177,15 +177,15 @@ export const carsSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        carNumber: yup
+        number: yup
             .string()
             .required(enterCarNumber)
             .matches(/[0-9]+/, isValidCarNumber),
-        carFuelConsumption: yup
+        fuelConsumption: yup
             .string()
             .required(enterCarFuelConsumption)
             .matches(/[0-9]+/, isValidCarFuelConsumption),
-        carLoadCapacity: yup
+        loadCapacity: yup
             .string()
             .required(enterCarLoadCapacity)
             .matches(/[0-9]+/, isValidCarLoadCapacity),
@@ -201,12 +201,12 @@ export const invoicesSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        invoiceNumber: yup
+        number: yup
             .string()
             .required(enterInvoiceNumber)
             .matches(/[0-9]+/, isValidInvoiceNumber),
-        invoiceCreationDate: yup.string().required(enterInvoiceCreationDate),
-        invoiceVerifiedDate: yup.string().required(enterInvoiceVerifiedDate),
+        creationDate: yup.string().required(enterInvoiceCreationDate),
+        verifiedDate: yup.string().required(enterInvoiceVerifiedDate),
     });
 }
 export const productsSchema = () => {
@@ -220,13 +220,13 @@ export const productsSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        productName:  yup
+       name:  yup
             .string()
             .min(2, enterProductName)
             .max(20, productNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductName),
-        productAmount: yup
+        amount: yup
             .string()
             .required(enterProductAmount)
             .matches(/[0-9]+/, isValidProductAmount),
@@ -240,7 +240,7 @@ export const productWriteOffsSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        productWriteOffsAmount: yup
+        amount: yup
             .string()
             .required(enterProductWriteOffAmount)
             .matches(/[0-9]+/, isValidProductWriteOffAmount),

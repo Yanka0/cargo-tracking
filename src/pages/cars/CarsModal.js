@@ -23,20 +23,20 @@ function CarsModal({closeModal, onSubmit}) {
                         id="carNumber"
                         type="text"
                         placeholder={t("carNumber")}
-                        register={{...register("carNumber")}}
-                        errorMessage={errors.carNumber?.message}/>
+                        register={{...register("number")}}
+                        errorMessage={errors.number?.message}/>
                     <Input
                         id="carFuelConsumption"
                         type="text"
                         placeholder={t("carFuelConsumption")}
-                        register={{...register("carFuelConsumption")}}
-                        errorMessage={errors.carFuelConsumption?.message}/>
+                        register={{...register("fuelConsumption")}}
+                        errorMessage={errors.fuelConsumption?.message}/>
                     <Input
                         id="carLoadCapacity"
                         type="text"
                         placeholder={t("carLoadCapacity")}
-                        register={{...register("carLoadCapacity")}}
-                        errorMessage={errors.carLoadCapacity?.message}/>
+                        register={{...register("loadCapacity")}}
+                        errorMessage={errors.loadCapacity?.message}/>
                     <Select
                         register={{...register("carType")}}
                         options={[t('tankTruck'), t('refrigerator'), t('openBodyTruck')]}

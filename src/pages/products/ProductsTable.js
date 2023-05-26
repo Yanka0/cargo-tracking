@@ -3,7 +3,6 @@ import {useTranslation} from "react-i18next";
 import Table from "../../components/tables/Table";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
 import Button from "../../components/forms/button/Button";
-import InvoicesModal from "../invoices/InvoicesModal";
 import ProductsModal from "./ProductsModal";
 
 function ProductsTable(props) {
@@ -32,15 +31,15 @@ function ProductsTable(props) {
                 columns={[
                     {
                         name: t("productName"),
-                        renderer: (client) => client.productName,
+                        renderer: (product) => product.name,
                     },
                     {
                         name: t("productStatus"),
-                        renderer: (client) => client.productStatus,
+                        renderer: (product) => product.status,
                     },
                     {
                         name: t("productAmount"),
-                        renderer: (client) => client.productAmount,
+                        renderer: (product) => product.amount,
                     },
 
                     {
