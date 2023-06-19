@@ -66,6 +66,13 @@ export const Translations = () => {
         isValidProductAmount:t('isValidProductAmount'),
         enterProductWriteOffAmount:t('enterProductWriteOffAmount'),
         isValidProductWriteOffAmount:t('isValidProductWriteOffAmount'),
+        enterCalcCarTime:t('enterCalcCarTime'),
+        isValidCalcCarTime:t('isValidCalcCarTime'),
+        enterMoversNum:t('enterMoversNum'),
+        isValidMoversNum:t('isValidMoversNum'),
+        enterDistance:t('enterDistance'),
+        isValidDistance:t('isValidDistance'),
+
 
     };
 };

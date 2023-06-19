@@ -1,5 +1,4 @@
 import React from "react";
-
 import './Table.scss'
 import {Container} from "react-bootstrap";
 

@@ -9,6 +9,7 @@ import CarsTable from "../pages/cars/CarsTable";
 import InvoicesTable from "../pages/invoices/InvoicesTable";
 import ProductsTable from "../pages/products/ProductsTable";
 import ProductsWriteOffsTable from "../pages/productsWriteOffs/ProductsWriteOffsTable";
+import Price from "../components/home/price/Price";
 
 function App() {
     return (

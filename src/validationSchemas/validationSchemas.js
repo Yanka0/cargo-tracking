@@ -247,4 +247,29 @@ export const productWriteOffsSchema = () => {
 
     });
 }
+export const priceCalculatorSchema = () => {
+    const {
+        enterCalcCarTime,
+        isValidCalcCarTime,
+        enterMoversNum,
+        isValidMoversNum,
+        enterDistance,
+        isValidDistance
+    } = Translations();
 
+    return yup.object().shape({
+        calcCarTime: yup
+            .string()
+            .required(enterCalcCarTime)
+            .matches(/[2-9]+/, isValidCalcCarTime),
+        moversNum: yup
+            .string()
+            .required(enterMoversNum)
+            .matches(/[0-9]+/, isValidMoversNum),
+        distance: yup
+            .string()
+            .required(enterDistance)
+            .matches(/[0-9]+/, isValidDistance),
+
+    });
+}

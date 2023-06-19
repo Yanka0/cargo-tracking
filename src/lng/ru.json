@@ -158,6 +158,45 @@
   "invoices": "ТТН",
   "products": "Продукты",
   "productsWriteOffs": "Акт потери/кражи/испорченности продукта",
-  "tables": "Таблицы"
+  "tables": "Таблицы",
+  "priceInMinsk": "Стоимость перевозки грузов по Минску",
+  "priceInBelarus": "Стоимость перевозки грузов по Беларуси (дополнительная оплата)",
+  "boxTruckPrice": "От 20 бел. рублей/1 час",
+  "openBodyTruckPrice": "От 15 бел. рублей/1 час",
+  "tankTruckPrice": "От 40 бел. рублей/1 час",
+  "refrigeratorPrice": "От 40 бел. рублей/1 час",
+  "moversPrice": " Oт 7 бел. рублей/1 час/1 грузчик",
+  "moversAdditionalPrice": " Oт 8 бел. рублей/1 час/1 грузчик",
+  "boxTruckAdditionalPrice": "От 0,5 бел. рублей/1 км",
+  "openBodyTruckAdditionalPrice": "От 0,58 бел. рублей/1 км",
+  "tankTruckAdditionalPrice": "От 1 бел. рублей/1 км",
+  "refrigeratorAdditionalPrice": "От 1 бел. рублей/1 км",
+  "priceTitle": "Стоимость грузоперевозок в Минске и по Беларуси",
+  "moversTitle": "Помощь грузчиков ",
+  "additionalPricesTitle": "Перевозки грузов по Беларуси",
+  "price": "Стоимость",
+  "minOrder": "Минимальное время заказа - 2 часа",
+  "orderPrice": "Грузоперевозка до 10 км от МКАД - бесплатно",
+  "estimatePrice": "Указанная стоимость является примерной",
+  "note": "Примечание",
+  "priceCalcTitle": "Калькулятор стоимости перевозок",
+  "isValidCalcCarTime": "Неверно заполнено",
+  "enterCalcCarTime": "Введите количество часов (мин. 2 часа)",
+  "calcCarTime": "Кол-во машино-часов ",
+  "enterMoversNum": "Введите количество грузчиков",
+  "isValidMoversNum": "Неверно заполнено",
+  "enterDistance": "Введите расстояние перевозки от МКАД в км.",
+  "isValidDistance": "Неверно заполнено",
+  "moversNum": "Количество грузчиков",
+  "distance": "Расстояние от МКАД(км)"
+
+
+
+
+
+
+
+
+
 
 }

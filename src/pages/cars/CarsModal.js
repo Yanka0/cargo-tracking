@@ -39,7 +39,7 @@ function CarsModal({closeModal, onSubmit}) {
                         errorMessage={errors.loadCapacity?.message}/>
                     <Select
                         register={{...register("carType")}}
-                        options={[t('tankTruck'), t('refrigerator'), t('openBodyTruck')]}
+                        options={[t('tankTruck'), t('refrigerator'), t('openBodyTruck'),t('boxTruck')]}
                     />
 
                 </>
