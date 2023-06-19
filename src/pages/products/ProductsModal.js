@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useTranslation} from "react-i18next";
 import {productsSchema} from "../../validationSchemas/validationSchemas";
 import ModalForm from "../../components/forms/ModalForm";
@@ -33,9 +33,8 @@ function ProductsModal({closeModal, onSubmit}) {
                     />
                     <Select
                         register={{...register("status")}}
-                        options={[t('accepted'), t('verificationСompleted'), t('lost'),t('delivered')]}
+                        options={[t('accepted'), t('verificationСompleted'), t('lost'), t('delivered')]}
                     />
-
 
 
                 </>

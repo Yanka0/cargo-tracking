@@ -98,11 +98,11 @@ function UsersTable() {
     // const [isLoading, setLoading] = useState(true);
     //   const [users, setUsers] = useState();
     //
-      useEffect(() => {
+    useEffect(() => {
         axios.get("http://localhost:8080/api/users?pageSize=10&pageNumber=0").then(response => {
-          setRows(response.data)
+            setRows(response.data)
         });
-      }, []);
+    }, []);
     //
     //   if (isLoading) {
     //     return <div className="App">Loading...</div>;

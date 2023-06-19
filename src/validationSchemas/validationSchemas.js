@@ -129,13 +129,13 @@ export const storageSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        name:  yup
+        name: yup
             .string()
             .min(2, enterStorageName)
             .max(20, storageNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidStorageName),
-        address:  yup
+        address: yup
             .string()
             .max(20, storageAddressSize)
             .required(enterStorageAddress)
@@ -153,13 +153,13 @@ export const productOwnerSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-        name:  yup
+        name: yup
             .string()
             .min(2, enterProductOwnerName)
             .max(20, productOwnerNameSize)
             .required()
             .matches(/[A-Za-zА-Яа-яЁё]+/, isValidProductOwnerName),
-        address:  yup
+        address: yup
             .string()
             .max(20, productOwnerAddressSize)
             .required(enterProductOwnerAddress)
@@ -220,7 +220,7 @@ export const productsSchema = () => {
     } = Translations();
 
     return yup.object().shape({
-       name:  yup
+        name: yup
             .string()
             .min(2, enterProductName)
             .max(20, productNameSize)
@@ -261,7 +261,7 @@ export const priceCalculatorSchema = () => {
         calcCarTime: yup
             .string()
             .required(enterCalcCarTime)
-            .matches(/[2-9]+/, isValidCalcCarTime),
+            .matches(/[2-9]\d*/, isValidCalcCarTime),
         moversNum: yup
             .string()
             .required(enterMoversNum)

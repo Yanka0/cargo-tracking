@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import finger_icon from '../assets/img/footer_finger_icon.svg'
 import email_icon from '../assets/img/footer_email_icon.svg'
 import phone_icon from '../assets/img/footer_phone_icon.svg'
+
 function Footer() {
     const {t} = useTranslation();
     return (

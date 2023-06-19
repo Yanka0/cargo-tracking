@@ -5,7 +5,7 @@ import ModalForm from "../../components/forms/ModalForm";
 import Input from "../../components/forms/input/Input";
 import Select from "../../components/forms/select/Select";
 
-function ProductsWriteOffsModal({closeModal,onSubmit}) {
+function ProductsWriteOffsModal({closeModal, onSubmit}) {
     const {t} = useTranslation();
     const title = t("addProductWriteOff");
     const schema = productWriteOffsSchema();
@@ -26,7 +26,7 @@ function ProductsWriteOffsModal({closeModal,onSubmit}) {
                         errorMessage={errors.amount?.message}/>
                     <Select
                         register={{...register("status")}}
-                        options={[t('stolen'), t('lost'),t('spoiled')]}
+                        options={[t('stolen'), t('lost'), t('spoiled')]}
                     />
 
                 </>

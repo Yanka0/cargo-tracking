@@ -49,7 +49,6 @@ function InvoicesModal({closeModal, onSubmit}) {
                     />
 
 
-
                 </>
             )}
             onSubmitButtonText={t("save")}

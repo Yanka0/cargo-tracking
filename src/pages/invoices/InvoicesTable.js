@@ -98,7 +98,7 @@ function InvoicesTable(props) {
                     },
                     {
                         name: t("actions"),
-                        renderer: (invoice) => ( <span>
+                        renderer: (invoice) => (<span>
                         <BsFillTrashFill
                             className="deleteIcon"
                             onClick={() => deleteInvoice(invoice.id)}

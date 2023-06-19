@@ -14,7 +14,7 @@
 }
 
 thead {
-  background-color: rgb(147, 180, 118);
+  background-color: rgb(118, 173, 167);
   color: rgb(255, 255, 255)
 }
 
@@ -27,9 +27,11 @@ td {
   white-space: nowrap;
   width: auto;
 }
-td{
+
+td {
   border-right: 0.5px solid #ddd;
 }
+
 .deleteIcon {
   color: red;
 }

@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import Table from "../../components/tables/Table";
 import {BsFillPencilFill, BsFillTrashFill} from "react-icons/bs";
 import Button from "../../components/forms/button/Button";
 import StoragesModal from "./StoragesModal";
-import {useEffect} from "react";
 import axios from 'axios';
 
 

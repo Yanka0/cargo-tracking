@@ -23,17 +23,21 @@
       color: rgb(241, 6, 6);
     }
   }
-  .dropdown{
+
+  .dropdown {
     padding-right: 40px;
   }
- .dropdown-item.active{
-   background-color: rgb(30, 30, 31);
-   color: white;
- }
+
+  .dropdown-item.active {
+    background-color: rgb(30, 30, 31);
+    color: white;
+  }
+
   .dropdown-item:focus {
     background-color: rgba(255, 255, 255, 0.25);
     color: rgb(94, 88, 88);
   }
+
   .form_btn {
     padding: 0 !important;
     display: inline-block !important;

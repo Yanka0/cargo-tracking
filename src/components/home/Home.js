@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 import TruckingCard from "./truckingCards/TruckingCard";
 import BusinessRules from "./businessRules/BusinessRules";
 import Price from "./price/Price";
-import PriceCalculator from "./priceCalculator/PriceCalculator";
+import PriceExample from "./priceExample/PriceExample";
 
 function Home() {
     const {t} = useTranslation();
@@ -29,10 +29,11 @@ function Home() {
             </section>
             <section className="allTruckingCards">
                 <TruckingCard/>
-                <BusinessRules/>
-                <Price/>
-                <PriceCalculator/>
+
             </section>
+            <BusinessRules/>
+            <Price/>
+            <PriceExample/>
         </div>
     );
 }
